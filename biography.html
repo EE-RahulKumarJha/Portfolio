@@ -212,12 +212,28 @@
             research findings effectively.
           </p>
            <h1>My CV</h1>
-            <p>This is my CV. Click the button below to download:</p>
+    <p>This is my CV. Click the button below to download:</p>
 
-            <!-- CV Download Link -->
-            <a href="https://drive.google.com/file/d/1hN2Oq54liZGFpv-OcG3orrF3iuLZqt45/view?usp=sharing" download="Academic-CV.pdf">
-            <button>Download CV</button>
-    </a>
+    <!-- CV Download Button -->
+    <button id="downloadButton">Download CV</button>
+
+    <script>
+        // JavaScript to handle the button click event
+        document.getElementById("downloadButton").addEventListener("click", function() {
+            // Create a new anchor element
+            var downloadLink = document.createElement("a");
+            // Set the href attribute to the file path or URL of your CV file
+            downloadLink.href = "https://drive.google.com/file/d/1hN2Oq54liZGFpv-OcG3orrF3iuLZqt45/view?usp=drive_link";
+            // Set the download attribute to specify the name of the downloaded file
+            downloadLink.download = "Academic-CV.pdf";
+            // Append the anchor element to the body
+            document.body.appendChild(downloadLink);
+            // Trigger a click event on the anchor element
+            downloadLink.click();
+            // Remove the anchor element from the body
+            document.body.removeChild(downloadLink);
+        });
+    </script>
         </div>
       </main>
     </div>
